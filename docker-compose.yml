@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  frontend:
+    restart: unless-stopped
+    build:
+      context: ./manufacturing-dashboard
+      dockerfile: Dockerfile
+    ports:
+      - "${FE_LOCAL_PORT:-3000}:${FE_DOCKER_PORT:-3000}"
+    env_file:
+      - ./manufacturing-dashboard/.env
+
+  backend:
+    build:
+      context: ./manufacturing-backend
+      dockerfile: Dockerfile
+    ports:
+      - ${NODE_LOCAL_PORT:-8080}:${NODE_DOCKER_PORT:-8080}
+    environment:
+      - DB_HOST=mongo
+      - DB_USER=${MONGODB_USER:-root}
+      - DB_PASSWORD=${MONGODB_PASSWORD:-123456}
+      - DB_NAME=${MONGODB_DATABASE:-nvidiaDB}
+      - DB_PORT=${MONGODB_DOCKER_PORT:-27017}
+    env_file:
+      - ./manufacturing-backend/.env
+    restart: unless-stopped
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: mongo
+    image: mongo:5.0.2
+    env_file:
+      - ./.env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGODB_USER:-root}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGODB_PASSWORD:-123456}
+    ports:
+      - ${MONGODB_LOCAL_PORT:-27017}:${MONGODB_DOCKER_PORT:-27017}
+    volumes:
+      - db:/data/db
+
+volumes:
+  db:

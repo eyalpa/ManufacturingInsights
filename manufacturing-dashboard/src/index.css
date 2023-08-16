@@ -1,0 +1,65 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+/* Global styles for better normalization */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the ChartComponent, assuming it's a block-level element. You can modify as per your design. */
+.ChartComponent {
+  width: 100%;
+  height: 25vh;
+  /* Assuming a height for demonstration purposes */
+  background-color: #e9ecef;
+  /* Placeholder background color */
+      margin-bottom: 40px;
+        /* Increased margin for more space between the chart and the table */
+}
+
+/* Filters styling */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  /* Distribute filters evenly */
+  flex-wrap: wrap;
+  /* Wrap to next line if space is insufficient */
+  gap: 10px;
+  /* Gap between filters */
+  margin-bottom: 20px;
+}
+
+/* Basic table styling */
+#data-table {
+  width: 100%;
+  border-collapse: collapse;
+  /* No gaps between cells */
+  text-align: left;
+}
+
+#data-table th,
+#data-table td {
+  padding: 10px 15px;
+  /* Cell padding */
+  border-bottom: 1px solid #d1d5da;
+  /* Border between rows */
+}
+
+#data-table th {
+  background-color: #f7f9fa;
+}

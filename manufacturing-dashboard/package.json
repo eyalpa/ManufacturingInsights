@@ -1,0 +1,50 @@
+{
+    "name": "manufacturing-dashboard",
+    "version": "1.0.0",
+    "description": "A web tool for interacting with manufacturing data.",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "eject": "react-scripts eject"
+    },
+    "proxy": "http://localhost:8080",
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {
+        "@elastic/datemath": "^5.0.3",
+        "@elastic/eui": "^87.0.0",
+        "@emotion/react": "^11.11.1",
+        "@emotion/styled": "^11.11.0",
+        "@mui/material": "^5.14.4",
+        "@trendmicro/react-datepicker": "^1.0.0-alpha.7",
+        "axios": "^1.4.0",
+        "bootstrap": "^5.3.1",
+        "chart.js": "^4.3.3",
+        "datatables.net": "^1.13.6",
+        "datatables.net-bs4": "^1.13.6",
+        "datatables.net-buttons": "^2.4.1",
+        "datatables.net-buttons-bs4": "^2.4.1",
+        "datatables.net-dt": "^1.13.6",
+        "jquery": "^3.6.0",
+        "moment": "^2.29.4",
+        "react": "^18.2.0",
+        "react-chartjs-2": "^5.2.0",
+        "react-datepicker": "^4.16.0",
+        "react-dom": "^18.0.0",
+        "react-scripts": "latest",
+        "web-vitals": "^3.4.0"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
